@@ -7,7 +7,7 @@
     font-family: Arial;
 
 }
-#fromlogin{
+#formlogin{
     display:flex ;
     flex-direction: column;
     gap: 10px;
