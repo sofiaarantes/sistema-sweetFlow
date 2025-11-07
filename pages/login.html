@@ -20,7 +20,7 @@
             <input type="text" id="usuario" required placeholder="Digite seu nome de usário">
             <br>
             <label for="Senha">Senha:</label>
-            <input type="password" id="senha" required placeholder="Digite seu senha" >
+            <input type="password" id="senha" required placeholder="Digite seu senha"  onkeydown="if(event.key=='Enter')login()">
             <br>
             <button type="button"id="log" onclick="login()">Enviar</button>
 
