@@ -4,22 +4,25 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/style.css" type="text/css">
+    <link rel="stylesheet" href="../CSS/style.css" type="text/css">
+    <script src="../js/main.js"></script>
     <title>Login</title>
 </head>
+
+
 
 <body>
     <fieldset class="login">
         <legend>Login</legend>
         <form action="#" id="formlogin">
             
-            <label for="Email:">Email:</label>
-            <input type="email" id="Email" required>
+            <label for="Usuario:">Nome de Usuário:</label>
+            <input type="text" id="usuario" required placeholder="Digite seu nome de usário">
             <br>
             <label for="Senha">Senha:</label>
-            <input type="password" id="senha" required>
+            <input type="password" id="senha" required placeholder="Digite seu senha" >
             <br>
-            <button type="submit">Enviar</button>
+            <button type="submit"id="log" onclick="login()">Enviar</button>
 
         </form>
     </fieldset>

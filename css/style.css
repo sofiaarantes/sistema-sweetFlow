@@ -10,8 +10,14 @@
 #formlogin{
     display:flex ;
     flex-direction: column;
-    gap: 10px;
-    align-items: center;
+    
 
     
+}
+#log{
+    background-color: greenyellow;
+    border-radius: 10px;
+    border-color: greenyellow;
+    width: 40%;
+    margin:0 auto;
 }
