@@ -13,7 +13,7 @@ function login(){
     if(senha==senhaDigitada && usuario==usuarioDigitado){
         alert("Login realizado com sucesso!✅");
     
-    window.location.href="pages/livraria.html"// para rederencionar a pagina aopos o login
+    window.location.href="https://www.mercadolivre.com.br/"// para rederencionar a pagina aopos o login
     }else{ 
         alert("Usuário ou senha incorreto!❌");
 
