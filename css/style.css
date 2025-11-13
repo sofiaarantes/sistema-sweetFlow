@@ -59,3 +59,121 @@ h3 {
     color: white !important;
     border: none;
 }
+
+
+/* Cards de produtos */
+
+.produto-card {
+    border: none;
+    border-radius: 15px;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    background-color: #fffdfd;
+}
+
+.produto-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 18px rgba(247, 143, 179, 0.3);
+}
+
+.produto-imagem {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    border-bottom: 3px solid #f7c8d4;
+}
+
+
+/* Texto */
+
+.card-title {
+    color: #f78fb3;
+}
+
+.list-unstyled li {
+    font-size: 0.9rem;
+    margin-bottom: 4px;
+    color: #6d4c41;
+}
+
+
+/* Botões */
+
+.btn-outline-secondary {
+    border-radius: 10px;
+    border-color: #f7a9b8;
+    color: #f7a9b8;
+}
+
+.btn-outline-secondary:hover {
+    background-color: #f7a9b8;
+    color: white;
+}
+
+.btn-danger {
+    border-radius: 10px;
+}
+
+.btn-primary,
+.btn-success {
+    border-radius: 10px;
+}
+
+.btn-principal {
+    padding: 10px 25px;
+    border-radius: 30px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    border: none;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+}
+
+.btn-adicionar {
+    background: linear-gradient(135deg, #81c784, #66bb6a);
+    color: white;
+}
+
+.btn-adicionar:hover {
+    background: linear-gradient(135deg, #66bb6a, #4caf50);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 16px rgba(102, 187, 106, 0.4);
+}
+
+.btn-adicionar:active {
+    transform: scale(0.98);
+}
+
+.btn-remover {
+    background: linear-gradient(135deg, #ef5350, #e57373);
+    color: white;
+}
+
+.btn-remover:hover {
+    background: linear-gradient(135deg, #e53935, #ef5350);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 16px rgba(239, 83, 80, 0.4);
+}
+
+.btn-remover:active {
+    transform: scale(0.98);
+}
+
+
+/* Responsividade */
+
+@media (max-width: 768px) {
+    .produto-imagem {
+        height: 150px;
+    }
+    .card-title {
+        font-size: 1rem;
+    }
+    .list-unstyled li {
+        font-size: 0.85rem;
+    }
+    .btn-principal {
+        width: 100%;
+        margin-bottom: 10px;
+    }
+}
