@@ -4,11 +4,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SweetFlow</title>
+    <title>SweetFlow - Gerenciar</title>
     <link rel="stylesheet" href="../css/style.css" type="text/css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="icon" type="image/png" href="../img/icon.png" style="border-radius: 20px;">
-
 </head>
 
 <body id="inicial">
@@ -24,24 +23,77 @@
             <li class="nav-item">
                 <a class="nav-link active rounded-5" href="gerenciar.html">Gerenciar Produtos</a>
             </li>
-
             <li class="nav-item">
                 <a class="nav-link rounded-5" href="index.html">Inicial</a>
             </li>
-
             <li class="nav-item">
                 <a class="nav-link rounded-5" href="historico.html">Histórico de Vendas</a>
             </li>
         </ul>
 
-        <!-- Frase principal -->
-        <div class="mt-4">
+        <!-- Título -->
+        <div class="mt-3 mb-4">
             <h3 class="fw-semibold">Gerenciar Produtos</h3>
-            <p class="paragrafo"> Gerenciar estoque de produtos. </p>
+            <p class="paragrafo">Adicione, remova e atualize o estoque de chocolates 🍬</p>
         </div>
+
+        <!-- Botões principais -->
+        <div class="d-flex flex-wrap justify-content-between align-items-center mb-3 gap-2">
+            <button id="btnRemoverTodos" class="btn-principal btn-remover d-none">
+                Remover Todos os Produtos
+            </button>
+
+            <button class="btn-principal btn-adicionar" type="button" data-bs-toggle="collapse" data-bs-target="#formContainer" aria-expanded="false" aria-controls="formContainer">
+                Adicionar Produto
+            </button>
+        </div>
+
+
+        <!-- Formulário de cadastro (oculto até clicar) -->
+        <div class="collapse" id="formContainer">
+            <div class="card shadow-sm p-4 mb-4 text-start">
+                <form id="formProduto">
+                    <div class="row g-3">
+                        <div class="col-md-6">
+                            <label for="nome" class="form-label">Nome do Produto</label>
+                            <input type="text" id="nome" class="form-control" required>
+                        </div>
+                        <div class="col-md-6">
+                            <label for="imagem" class="form-label">Imagem do Produto</label>
+                            <input type="file" id="imagem" class="form-control" accept="image/*" required>
+                        </div>
+                        <div class="col-md-4">
+                            <label for="valorPacote" class="form-label">Valor do Pacote (R$)</label>
+                            <input type="number" id="valorPacote" class="form-control" min="0" step="0.01" required>
+                        </div>
+                        <div class="col-md-4">
+                            <label for="qtdPacote" class="form-label">Unidades no Pacote</label>
+                            <input type="number" id="qtdPacote" class="form-control" min="1" required>
+                        </div>
+                        <div class="col-md-4">
+                            <label for="valorUnidade" class="form-label">Valor por Unidade (R$)</label>
+                            <input type="number" id="valorUnidade" class="form-control" min="0" step="0.01" required>
+                        </div>
+                        <div class="col-md-4">
+                            <label for="qtdComprada" class="form-label">Pacotes Comprados</label>
+                            <input type="number" id="qtdComprada" class="form-control" min="1" required>
+                        </div>
+                    </div>
+                    <button type="submit" class="btn btn-primary mt-4 w-100">Salvar Produto</button>
+                </form>
+            </div>
+        </div>
+
+        <!-- Lista de produtos -->
+        <div id="listaProdutos" class="row g-3 justify-content-center"></div>
+
+        <!-- Mensagem caso não haja produtos -->
+        <p id="mensagemVazia" class="text-muted mt-4">Nenhum produto adicionado ainda.</p>
+
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="../js/gerenciar.js"></script>
 </body>
 
 </html>
