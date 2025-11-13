@@ -1,5 +1,5 @@
-
 /* Logo */
+
 .logo {
     width: 200px;
     height: auto;
@@ -7,53 +7,55 @@
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
 }
 
-
 #inicial {
     background: linear-gradient(135deg, #e3f2fd, #ffffff);
     min-height: 100vh;
 }
 
+
 /* pagina inicial*/
+
 body {
-            background-color: #fff8f5; /* tom leve e acolhedor */
-            font-family: 'Poppins', sans-serif;
-        }
+    background-color: #fff8f5;
+    /* tom leve e acolhedor */
+    font-family: 'Poppins', sans-serif;
+}
 
-        .logo {
-            width: 150px;
-            border-radius: 50%;
-            box-shadow: 0 0 15px rgba(255, 192, 203, 0.3);
-        }
+.logo {
+    width: 150px;
+    border-radius: 50%;
+    box-shadow: 0 0 15px rgba(255, 192, 203, 0.3);
+}
 
-        .nav {
-            background-color: #f7c8d4; 
-        }
+.nav {
+    background-color: #f7c8d4;
+}
 
-        .nav-link {
-            color: white ;
-            font-weight: 500;
-        }
+.nav-link {
+    color: white;
+    font-weight: 500;
+}
 
-        .nav-link.active {
-            background-color: #fff;
-            color: #f7a9b8 ;
-        }
+.nav-link.active {
+    background-color: #fff;
+    color: #f7a9b8;
+}
 
-        h1 {
-            color: #f78fb3;
-        }
+h1 {
+    color: #f78fb3;
+}
 
-        h3 {
-            color: #6d4c41;
-        }
+h3 {
+    color: #6d4c41;
+}
 
-        .paragrafo {
-            font-size: 1.1rem;
-            color: #8d6e63;
-        }
+.paragrafo {
+    font-size: 1.1rem;
+    color: #8d6e63;
+}
 
 .nav-pills .nav-link.active {
-    background-color: #f78fb3 !important; 
+    background-color: #f78fb3 !important;
     color: white !important;
     border: none;
 }
