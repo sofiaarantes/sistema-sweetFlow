@@ -43,7 +43,33 @@
             </div>
 
         <p id="mensagemVazia" class="text-muted mt-4">Nenhum produto cadastrado.</p>
+<button class="btn-carrinho" type="button" data-bs-toggle="modal" data-bs-target="#carrinhoModal" id="btnAbrirCarrinho">
+    🛒 Carrinho (<span id="contadorCarrinho">0</span>)
+</button>
 
+<div class="modal fade" id="carrinhoModal" tabindex="-1" aria-labelledby="carrinhoModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="carrinhoModalLabel">🛒 Meu Carrinho</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <div id="itensCarrinho" class="list-group">
+                    </div>
+                <p id="carrinhoVazioMensagem" class="text-muted text-center mt-3 d-none">Seu carrinho está vazio.</p>
+                
+                <div class="mt-3 text-end">
+                    <p class="fw-bold fs-5">Total: <span id="valorTotalCarrinho" class="text-success">R$ 0,00</span></p>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Continuar Comprando</button>
+                <button type="button" class="btn btn-primary" id="btnFinalizarVenda" disabled>Finalizar Venda</button>
+            </div>
+        </div>
+    </div>
+</div>
     </div>
     <footer class="pt-4 my-4 text-muted border-top">
 
