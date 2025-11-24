@@ -279,3 +279,22 @@ document.addEventListener('DOMContentLoaded', () => {
     
     document.getElementById("btnFinalizarVenda").addEventListener("click", finalizarVenda);
 });
+
+
+$(document).ready(function() {
+   
+    $('body').append('<button id="btnTopo" style="display:none; position:fixed; bottom:20px; right:20px; z-index:99;">⬆</button>');
+    
+    $(window).scroll(function() {
+        if ($(this).scrollTop() > 100) {
+            $('#btnTopo').fadeIn();
+        } else {
+            $('#btnTopo').fadeOut();
+        }
+    });
+
+    $('#btnTopo').click(function() {
+        $('html, body').animate({scrollTop : 0}, 800);
+        return false;
+    });
+});
