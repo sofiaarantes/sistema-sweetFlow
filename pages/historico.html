@@ -14,7 +14,7 @@
     <div class="container py-4 text-center">
 
         <img src="../img/logo.jpg" alt="Logo SweetFlow" class="logo mb-3" style="width: 150px; height: auto;">
-        
+
         <h1 class="fw-bold mb-4">🍫 SweetFlow 🍫</h1>
 
         <ul class="nav nav-pills nav-fill gap-2 p-1 small rounded-5 shadow-sm mb-4">
@@ -36,7 +36,8 @@
 
         <div class="row justify-content-center my-4 g-3" id="resumoFinanceiro">
             <div class="col-md-4 col-10">
-                <div class="card shadow-sm p-3 h-100"> <h5 class="fw-bold text-primary">Valor Investido</h5>
+                <div class="card shadow-sm p-3 h-100">
+                    <h5 class="fw-bold text-primary">Valor Investido</h5>
                     <p id="valorInvestido" class="fw-bold fs-5 mb-0">R$ 0,00</p>
                 </div>
             </div>
@@ -54,21 +55,20 @@
             </div>
         </div>
 
-        <div class="my-5 row justify-content-center">
-            <div class="col-md-8 col-12">
-                <h4 class="fw-semibold mb-3">📊 Gráfico de Vendas por Produto</h4>
-                <div style="position: relative; height: 300px; width: 100%;">
-                    <canvas id="graficoVendas"></canvas>
-                </div>
+        <div class="grafico-wrapper my-5">
+            <div class="grafico-card shadow p-4 rounded-4">
+                <h4 class="fw-semibold mb-4 text-center">📊 Produtos Mais Vendidos</h4>
+                <canvas id="graficoVendas"></canvas>
             </div>
         </div>
+
 
         <h3 class="fw-semibold">Produtos</h3> <br>
         <div class="row g-3 justify-content-center" id="listaHistorico"></div>
 
     </div>
-    
-    <footer class="pt-4 my-4 text-center text-muted border-top">
+
+    <footer class="text-center text-muted border-top">
         &copy; 2025 SweetFlow &middot; Todos os direitos reservados.
     </footer>
 

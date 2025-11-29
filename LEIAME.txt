@@ -5,6 +5,8 @@ Equipe:
 2. Gabriel Mendonça de OLiveira
 
 Descrição das funcionalidades:
-O sistema permite o gerenciamento de estoque de doces (adicionar, remover, alterar quantidade), visualização de produtos numa loja virtual, adição de itens ao carrinho de compras e registo de vendas. Também apresenta um histórico financeiro com cálculo de lucros e gráficos de desempenho.
+O sistema permite o gerenciamento de estoque de doces (adicionar, remover, alterar quantidade),
+visualização de produtos numa loja virtual, adição de itens ao carrinho de compras e registo de 
+vendas. Também apresenta um histórico financeiro com cálculo de lucros e gráficos de desempenho.
 
-Tecnologias usadas: HTML, CSS, Bootstrap, JavaScript, Chart.js, jQuery.
+Tecnologias usadas: HTML, CSS, Bootstrap, JavaScript, Chart.js, jQuery, API LocalStorage.

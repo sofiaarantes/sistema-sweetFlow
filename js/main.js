@@ -29,10 +29,10 @@ function renderizarCarrinho() {
     const btnFinalizar = document.getElementById("btnFinalizarVenda");
 
     container.innerHTML = "";
-    
+
     const carrinhoAgrupado = carrinho.reduce((acc, item) => {
         const produtoOriginal = listaProdutos.find(p => p.nome === item.nome);
-        
+
         if (!acc[item.nome]) {
             acc[item.nome] = {
                 nome: item.nome,
@@ -55,7 +55,7 @@ function renderizarCarrinho() {
     } else {
         mensagemVazia.classList.add("d-none");
         btnFinalizar.disabled = false;
-        
+
         itensAgrupados.forEach(item => {
             const valorTotalItem = item.quantidade * item.valorUnidade;
             totalCarrinho += valorTotalItem;
@@ -63,7 +63,7 @@ function renderizarCarrinho() {
 
             const itemElement = document.createElement("div");
             itemElement.className = "list-group-item d-flex justify-content-between align-items-center";
-            
+
             itemElement.innerHTML = `
                 <div>
                     ${item.nome} 
@@ -88,11 +88,11 @@ function renderizarCarrinho() {
 function adicionarAoCarrinho(index) {
     const lista = getProdutos();
     const produto = lista[index];
-    
+
     const totalUnidadesCompradas = produto.quantidade * produto.qtdPorPacote;
     const unidadesVendidasNoEstoque = produto.vendidos || 0;
     const unidadesDisponiveisNoEstoque = totalUnidadesCompradas - unidadesVendidasNoEstoque;
-    
+
     const unidadesNoCarrinho = carrinho.filter(item => item.nome === produto.nome).length;
 
     if (unidadesNoCarrinho >= unidadesDisponiveisNoEstoque) {
@@ -104,7 +104,7 @@ function adicionarAoCarrinho(index) {
         nome: produto.nome,
         indice: index
     });
-    
+
     renderizarProdutosVenda();
     renderizarCarrinho();
 }
@@ -131,18 +131,18 @@ function finalizarVenda() {
     if (!confirm("Deseja finalizar a venda e registrar todos os itens do carrinho?")) {
         return;
     }
-    
+
     const listaProdutos = getProdutos();
     const historico = getHistorico();
     const dataVenda = new Date().toISOString();
     let totalVenda = 0;
-    
+
     carrinho.forEach(itemCarrinho => {
         const produto = listaProdutos.find(p => p.nome === itemCarrinho.nome);
-        
+
         if (produto) {
             produto.vendidos = (produto.vendidos || 0) + 1;
-            
+
             const novoRegistro = {
                 nome: produto.nome,
                 valor: produto.valorUnidade,
@@ -155,7 +155,7 @@ function finalizarVenda() {
 
     salvarProdutos(listaProdutos);
     salvarHistorico(historico);
-    
+
     limparCarrinho();
     renderizarProdutosVenda();
     renderizarCarrinho();
@@ -167,7 +167,7 @@ function finalizarVenda() {
             modal.hide();
         }
     }
-    
+
     alert(`Venda finalizada com sucesso! Total: R$ ${totalVenda.toFixed(2)}.`);
 }
 
@@ -177,7 +177,7 @@ function venderProduto(index) {
 
     const totalUnidadesCompradas = produto.quantidade * produto.qtdPorPacote;
     const unidadesVendidas = produto.vendidos || 0;
-    
+
     const unidadesNoCarrinho = carrinho.filter(item => item.nome === produto.nome).length;
     const estoqueDisponivelReal = totalUnidadesCompradas - unidadesVendidas - unidadesNoCarrinho;
 
@@ -185,7 +185,7 @@ function venderProduto(index) {
         alert("Produto esgotado (ou já reservado no carrinho)!");
         return;
     }
-    
+
     if (!confirm(`Deseja registrar a venda de 1 unidade de "${produto.nome}" (R$ ${produto.valorUnidade.toFixed(2)}) imediatamente?`)) {
         return;
     }
@@ -204,7 +204,7 @@ function venderProduto(index) {
     salvarHistorico(historico);
 
     renderizarProdutosVenda();
-    
+
     alert(`Venda de 1 "${produto.nome}" registrada com sucesso!`);
 }
 
@@ -212,7 +212,7 @@ function renderizarProdutosVenda() {
     const lista = getProdutos();
     const container = document.getElementById("listaProdutosVenda");
     const mensagem = document.getElementById("mensagemVazia");
-    
+
     container.innerHTML = "";
 
     if (lista.length === 0) {
@@ -223,24 +223,24 @@ function renderizarProdutosVenda() {
     mensagem.textContent = "";
 
     lista.forEach((produto, index) => {
-        const totalUnidadesCompradas = produto.quantidade * produto.qtdPorPacote;
-        const unidadesVendidasNoEstoque = produto.vendidos || 0;
-        const unidadesDisponiveisNoEstoque = totalUnidadesCompradas - unidadesVendidasNoEstoque;
-        
-        const unidadesNoCarrinho = carrinho.filter(item => item.nome === produto.nome).length;
-        const unidadesRestantes = unidadesDisponiveisNoEstoque - unidadesNoCarrinho;
+                const totalUnidadesCompradas = produto.quantidade * produto.qtdPorPacote;
+                const unidadesVendidasNoEstoque = produto.vendidos || 0;
+                const unidadesDisponiveisNoEstoque = totalUnidadesCompradas - unidadesVendidasNoEstoque;
 
-        const card = document.createElement("div");
-        card.className = "col-12 col-sm-6 col-md-4 col-lg-3";
-        
-        const botaoCarrinhoDisabled = unidadesRestantes <= 0 ? 'disabled' : '';
-        const textoBotaoCarrinho = unidadesRestantes <= 0 ? 'Esgotado' : '🛒 Add Carrinho';
-        
-        const botaoVenderDisabled = unidadesRestantes <= 0 ? 'disabled' : '';
-        const textoBotaoVender = 'Vender Agora';
+                const unidadesNoCarrinho = carrinho.filter(item => item.nome === produto.nome).length;
+                const unidadesRestantes = unidadesDisponiveisNoEstoque - unidadesNoCarrinho;
+
+                const card = document.createElement("div");
+                card.className = "col-12 col-sm-6 col-md-4 col-lg-3";
+
+                const botaoCarrinhoDisabled = unidadesRestantes <= 0 ? 'disabled' : '';
+                const textoBotaoCarrinho = unidadesRestantes <= 0 ? 'Esgotado' : '🛒 Add Carrinho';
+
+                const botaoVenderDisabled = unidadesRestantes <= 0 ? 'disabled' : '';
+                const textoBotaoVender = 'Vender Agora';
 
 
-        card.innerHTML = `
+                card.innerHTML = `
             <div class="card produto-card shadow-sm h-100 d-flex flex-column">
                 <img src="${produto.imagem}" alt="${produto.nome}" class="card-img-top produto-imagem">
                 <div class="card-body text-start d-flex flex-column justify-content-between">
@@ -278,23 +278,4 @@ document.addEventListener('DOMContentLoaded', () => {
     renderizarCarrinho();
     
     document.getElementById("btnFinalizarVenda").addEventListener("click", finalizarVenda);
-});
-
-
-$(document).ready(function() {
-   
-    $('body').append('<button id="btnTopo" style="display:none; position:fixed; bottom:20px; right:20px; z-index:99;">⬆</button>');
-    
-    $(window).scroll(function() {
-        if ($(this).scrollTop() > 100) {
-            $('#btnTopo').fadeIn();
-        } else {
-            $('#btnTopo').fadeOut();
-        }
-    });
-
-    $('#btnTopo').click(function() {
-        $('html, body').animate({scrollTop : 0}, 800);
-        return false;
-    });
 });
